@@ -74,4 +74,21 @@ let candidateF = {
 };
 
 let crew = [candidateA,candidateC,candidateE];
+
+let lowestO2 = function(crew){
+  let choice = crew[0].o2Used(1);
+  let name = crew[0].name;
+  let i = 0
+  for(item in crew){
+    if (crew[i].o2Used(1)<choice){
+      choice = crew[i].o2Used(1);
+        name = crew[i].name;
+     
+    }
+    i++
+  }
+  return name;
+  }
+
+  console.log(lowestO2(crew))
 oxygenExpended(candidateB,5000,20000)
